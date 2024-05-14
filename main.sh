@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo chown user:user /home/user
 sh -c 'echo "password\npassword\n" | vncpasswd'
 tigervncserver -fg -localhost no -geometry 1920x1080 -xstartup startplasma-x11 &
 echo $! > /tmp/vncserver.pid
