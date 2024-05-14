@@ -8,10 +8,8 @@ RUN useradd -mG sudo -s /bin/bash user
 ARG password=password
 RUN echo "$password\n$password" | passwd root
 RUN echo "$password\n$password" | passwd user
-RUN echo "$password\n$password" | vncpasswd # set vnc password for "root"
 RUN echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 COPY main.sh /main.sh
 RUN chmod +x /main.sh
 USER user
-RUN echo "$password\n$password" | vncpasswd # set vnc password for "user"
 ENTRYPOINT ["/main.sh"]
