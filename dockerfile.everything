@@ -1,0 +1,3 @@
+FROM ghcr.io/westhecool/hackerbox:large
+ARG DEBIAN_FRONTEND=noninteractive
+RUN sudo apt update && sudo apt -y install kali-linux-everything
